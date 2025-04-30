@@ -1,10 +1,2020 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Стильный образ | Портфолио парикмахера</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        body {
+            background-color: #0a0a0a;
+            color: #e0e0e0;
+            overflow-x: hidden;
+        }
+
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        header {
+            background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+            padding: 180px 0 100px;
+            text-align: center;
+            color: #e0e0e0;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 1px solid #333;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .header-content h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            font-weight: 300;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #d4af37;
+            transform: translateY(20px);
+            opacity: 0;
+            animation: fadeInUp 1s forwards;
+        }
+
+        .header-content p {
+            font-size: 1.1rem;
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            transform: translateY(20px);
+            opacity: 0;
+            animation: fadeInUp 1s 0.3s forwards;
+            letter-spacing: 1px;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .nav-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: all 0.3s ease;
+            background: transparent;
+            padding: 25px 0;
+        }
+
+        .nav-container.scrolled {
+            background: rgba(10, 10, 10, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            padding: 15px 0;
+            border-bottom: 1px solid #222;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            font-weight: 400;
+            color: #d4af37;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            letter-spacing: 2px;
+        }
+
+        .nav-container.scrolled .logo {
+            color: #d4af37;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 40px;
+        }
+
+        .nav-links a {
+            color: #e0e0e0;
+            text-decoration: none;
+            font-weight: 400;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            position: relative;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .nav-container.scrolled .nav-links a {
+            color: #e0e0e0;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -5px;
+            left: 0;
+            background-color: #d4af37;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .cta-button {
+            background: transparent;
+            color: #d4af37;
+            border: 1px solid #d4af37;
+            padding: 12px 30px;
+            border-radius: 0;
+            font-size: 0.9rem;
+            font-weight: 400;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .cta-button:hover {
+            background-color: #d4af37;
+            color: #000;
+            transform: translateY(-3px);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 120px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .section-title h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.8rem;
+            color: #d4af37;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+            font-weight: 300;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 1px;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #d4af37;
+        }
+
+        .section-title p {
+            color: #999;
+            max-width: 700px;
+            margin: 20px auto 0;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            padding: 20px;
+        }
+
+        .about-image img {
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+            display: block;
+            border: 5px solid #1a1a1a;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: all 0.5s ease;
+        }
+
+        .about-image img:hover {
+            transform: scale(1.03);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+            border-color: #333;
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+            padding: 20px;
+        }
+
+        .about-text h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            color: #d4af37;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+            color: #b0b0b0;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+        }
+
+        .skills {
+            margin-top: 40px;
+        }
+
+        .skill-item {
+            margin-bottom: 25px;
+        }
+
+        .skill-name {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #d4af37;
+        }
+
+        .skill-bar {
+            height: 1px;
+            background-color: #333;
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background: #d4af37;
+            position: relative;
+            width: 0;
+            animation: fillBar 1.5s forwards;
+        }
+
+        @keyframes fillBar {
+            0% { width: 0; }
+        }
+
+        .experience-timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .experience-timeline::before {
+            content: '';
+            position: absolute;
+            height: 100%;
+            width: 1px;
+            background: #333;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            padding: 30px;
+            position: relative;
+            background-color: #101010;
+            border-radius: 0;
+            width: calc(50% - 40px);
+            margin-bottom: 50px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            border: 1px solid #222;
+        }
+
+        .timeline-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            border-color: #333;
+        }
+
+        .timeline-item:nth-child(odd) {
+            float: left;
+            clear: right;
+        }
+
+        .timeline-item:nth-child(even) {
+            float: right;
+            clear: left;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background-color: #d4af37;
+            border-radius: 50%;
+            top: 30px;
+            border: 2px solid #0a0a0a;
+        }
+
+        .timeline-item:nth-child(odd)::after {
+            right: -47px;
+        }
+
+        .timeline-item:nth-child(even)::after {
+            left: -47px;
+        }
+
+        .timeline-date {
+            font-size: 0.8rem;
+            color: #d4af37;
+            font-weight: 400;
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .timeline-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #e0e0e0;
+            font-weight: 400;
+        }
+
+        .timeline-description {
+            font-size: 0.9rem;
+            color: #b0b0b0;
+            line-height: 1.8;
+        }
+
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        footer {
+            background: #0a0a0a;
+            color: #e0e0e0;
+            padding: 80px 0 30px;
+            position: relative;
+            border-top: 1px solid #222;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 40px;
+            padding: 0 15px;
+        }
+
+        .footer-section h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            position: relative;
+            display: inline-block;
+            color: #d4af37;
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+
+        .footer-section h3::after {
+            content: '';
+            position: absolute;
+            width: 30px;
+            height: 1px;
+            background-color: #d4af37;
+            bottom: -10px;
+            left: 0;
+        }
+
+        .footer-section p {
+            color: #b0b0b0;
+            line-height: 1.8;
+            font-size: 0.9rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 10px;
+            color: #b0b0b0;
+            font-size: 0.9rem;
+        }
+
+        .contact-info {
+            margin-top: 20px;
+        }
+
+        .contact-info p {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            color: #b0b0b0;
+        }
+
+        .contact-info i {
+            margin-right: 15px;
+            color: #d4af37;
+            font-size: 1.1rem;
+        }
+
+        .social-links {
+            display: flex;
+            margin-top: 25px;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border: 1px solid #333;
+            color: #d4af37;
+            margin-right: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            border-color: #d4af37;
+            background-color: rgba(212, 175, 55, 0.1);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+            border-top: 1px solid #222;
+            margin-top: 40px;
+            color: #999;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+        }
+
+        @media screen and (max-width: 768px) {
+            .header-content h1 {
+                font-size: 2.8rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .about-content, .footer-content {
+                flex-direction: column;
+            }
+
+            .experience-timeline::before {
+                left: 30px;
+            }
+
+            .timeline-item {
+                width: calc(100% - 60px);
+                float: right;
+                clear: both;
+            }
+
+            .timeline-item:nth-child(odd)::after,
+            .timeline-item:nth-child(even)::after {
+                left: -36px;
+            }
+
+            .timeline-item:nth-child(odd) {
+                float: right;
+                clear: both;
+            }
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: #d4af37;
+            cursor: pointer;
+        }
+
+        .nav-container.scrolled .mobile-menu-btn {
+            color: #d4af37;
+        }
+
+        @media screen and (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: #0a0a0a;
+                flex-direction: column;
+                padding: 20px 0;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+                display: none;
+                border-top: 1px solid #222;
+                border-bottom: 1px solid #222;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li {
+                margin: 15px 0;
+                text-align: center;
+            }
+
+            .nav-links a {
+                color: #e0e0e0;
+            }
+        }
+    </style>
 </head>
 <body>
+<div id="particles-js"></div>
 
+<nav class="nav-container">
+    <div class="nav-content">
+        <a href="#" class="logo">СТИЛЬОБРАЗ</a>
+        <button class="mobile-menu-btn">&#9776;</button>
+        <ul class="nav-links">
+            <li><a href="#home">Главная</a></li>
+            <li><a href="#about">Обо мне</a></li>
+            <li><a href="#experience">Опыт работы</a></li>
+            <li><a href="#services">Услуги</a></li>
+            <li><a href="#contact">Контакты</a></li>
+        </ul>
+    </div>
+</nav>
+
+<header id="home">
+    <div class="header-content">
+        <h1>Искусство создания стиля</h1>
+        <p>Профессиональный парикмахер с индивидуальным подходом к каждому клиенту</p>
+        <a href="#contact" class="cta-button">Записаться</a>
+    </div>
+</header>
+
+<section id="about" class="container">
+    <div class="section-title">
+        <h2>Обо мне</h2>
+        <p>Познакомьтесь со мной и моим профессиональным путем в мире парикмахерского искусства</p>
+    </div>
+
+    <div class="about-content">
+        <div class="about-image">
+            <img src="/IMG_5884.JPG" alt="Профессиональный парикмахер">
+        </div>
+        <div class="about-text">
+            <h3>Привет, я Анна</h3>
+            <p>Я профессиональный парикмахер-стилист с более чем 8-летним опытом работы. Моя страсть — создавать уникальные образы, которые подчеркивают индивидуальность каждого клиента.</p>
+            <p>Я постоянно совершенствую свои навыки, изучаю новые техники и тренды, чтобы предложить вам самые современные и стильные решения для ваших волос.</p>
+            <p>В своей работе я использую только профессиональные материалы высокого качества, которые не только создают потрясающий вид, но и заботятся о здоровье ваших волос.</p>
+
+            <div class="skills">
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>Стрижки</span>
+                        <span>95%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 95%"></div>
+                    </div>
+                </div>
+
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>Окрашивание</span>
+                        <span>90%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 90%"></div>
+                    </div>
+                </div>
+
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>Укладки</span>
+                        <span>85%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 85%"></div>
+                    </div>
+                </div>
+
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>Наращивание волос</span>
+                        <span>80%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 80%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="experience" class="container">
+    <div class="section-title">
+        <h2>Опыт работы</h2>
+        <p>Мой профессиональный путь и достижения в сфере парикмахерского искусства</p>
+    </div>
+
+    <div class="experience-timeline">
+        <div class="timeline-item">
+            <div class="timeline-date">2021 - Настоящее время</div>
+            <h3 class="timeline-title">Ведущий стилист - Салон "Эстетика"</h3>
+            <p class="timeline-description">Работа с VIP-клиентами, проведение мастер-классов, создание авторских техник окрашивания и стрижки. Специализация на сложных трансформациях образа.</p>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-date">2018 - 2021</div>
+            <h3 class="timeline-title">Старший парикмахер - Студия "Стиль"</h3>
+            <p class="timeline-description">Создание образов для фотосессий и модных показов, наставничество начинающих специалистов, углубленное изучение колористики.</p>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-date">2015 - 2018</div>
+            <h3 class="timeline-title">Парикмахер-универсал - Салон "Красота"</h3>
+            <p class="timeline-description">Выполнение всех видов парикмахерских услуг, работа с разными типами волос, совершенствование техник стрижки и окрашивания.</p>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-date">2013 - 2015</div>
+            <h3 class="timeline-title">Обучение в Академии парикмахерского искусства</h3>
+            <p class="timeline-description">Получение базовых и продвинутых навыков парикмахерского мастерства, изучение анатомии волос, колористики и стилистики.</p>
+        </div>
+
+        <div class="clearfix"></div>
+    </div>
+</section>
+
+
+<!-- Секция "Услуги и цены" -->
+<section id="services" class="container">
+    <div class="section-title">
+        <h2>Услуги и цены</h2>
+        <p>Профессиональный подход к созданию вашего неповторимого образа</p>
+    </div>
+
+    <div class="services-wrapper">
+        <div class="services-category">
+            <div class="category-header">
+                <div class="category-icon">
+                    <i class="fas fa-cut"></i>
+                </div>
+                <h3>Стрижки</h3>
+            </div>
+            <div class="service-list">
+                <div class="service-item">
+                    <div class="service-info">
+                        <h4>Женская стрижка</h4>
+                        <p>Подбор стиля, мытье, стрижка, укладка</p>
+                    </div>
+                    <div class="service-price">от 3500 ₽</div>
+                </div>
+                <div class="service-item">
+                    <div class="service-info">
+                        <h4>Мужская стрижка</h4>
+                        <p>Консультация, мытье, стрижка, укладка</p>
+                    </div>
+                    <div class="service-price">от 2500 ₽</div>
+                </div>
+                <div class="service-item">
+                    <div class="service-info">
+                        <h4>Детская стрижка</h4>
+                        <p>Для детей до 12 лет</p>
+                    </div>
+                    <div class="service-price">от 1800 ₽</div>
+                </div>
+                <div class="service-item">
+                    <div class="service-info">
+                        <h4>Креативная стрижка</h4>
+                        <p>Индивидуальный дизайн, актуальные тренды</p>
+                    </div>
+                    <div class="service-price">от 4500 ₽</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="services-category">
+            <div class="category-header">
+                <div class="category-icon">
+                    <i class="fas fa-tint"></i>
+                </div>
+                <h3>Окрашивание</h3>
+            </div>
+            <div class="service-list">
+                <div class="service-item">
+                    <div class="service-info">
+                        <h4>Однотонное окрашивание</h4>
+                        <p>Стойкий краситель, все длины</p>
+                    </div>
+                    <div class="service-price">от 4000 ₽</div>
+                </div>
+                <div class="service-item">
+                    <div class="service-info">
+                        <h4>Сложное окрашивание</h4>
+                        <p>Балаяж, омбре, шатуш, airtouch</p>
+                    </div>
+                    <div class="service-price">от 7500 ₽</div>
+                </div>
+                <div class="service-item">
+                    <div class="service-info">
+                        <h4>Блонд</h4>
+                        <p>Осветление, тонирование</p>
+                    </div>
+                    <div class="service-price">от 8000 ₽</div>
+                </div>
+                <div class="service-item">
+                    <div class="service-info">
+                        <h4>Тонирование</h4>
+                        <p>Для поддержания или коррекции цвета</p>
+                    </div>
+                    <div class="service-price">от 3500 ₽</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="services-category">
+            <div class="category-header">
+                <div class="category-icon">
+                    <i class="fas fa-magic"></i>
+                </div>
+                <h3>Укладки</h3>
+            </div>
+            <div class="service-list">
+                <div class="service-item">
+                    <div class="service-info">
+                        <h4>Повседневная укладка</h4>
+                        <p>Быстрая и эффектная укладка для будней</p>
+                    </div>
+                    <div class="service-price">от 2000 ₽</div>
+                </div>
+                <div class="service-item">
+                    <div class="service-info">
+                        <h4>Вечерняя прическа</h4>
+                        <p>Для особых мероприятий и выходов</p>
+                    </div>
+                    <div class="service-price">от 5000 ₽</div>
+                </div>
+                <div class="service-item">
+                    <div class="service-info">
+                        <h4>Свадебная прическа</h4>
+                        <p>Включая пробный образ</p>
+                    </div>
+                    <div class="service-price">от 8000 ₽</div>
+                </div>
+                <div class="service-item">
+                    <div class="service-info">
+                        <h4>Локоны</h4>
+                        <p>Голливудские, текстурные, небрежные</p>
+                    </div>
+                    <div class="service-price">от 3000 ₽</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="services-note">
+        <p>* Окончательная стоимость услуг определяется на консультации и зависит от длины, густоты волос и сложности работы</p>
+        <a href="#contact" class="cta-button services-cta">Записаться на консультацию</a>
+    </div>
+</section>
+
+<!-- CSS стили для секции "Услуги и цены" -->
+<style>
+    .services-wrapper {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 40px;
+        margin-bottom: 60px;
+    }
+
+    .services-category {
+        background-color: #101010;
+        border: 1px solid #222;
+        padding: 0;
+        transition: all 0.3s ease;
+    }
+
+    .services-category:hover {
+        border-color: #333;
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .category-header {
+        padding: 30px 25px;
+        text-align: center;
+        border-bottom: 1px solid #222;
+        position: relative;
+    }
+
+    .category-icon {
+        margin: 0 auto 20px;
+        width: 60px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #d4af37;
+        color: #d4af37;
+        font-size: 1.5rem;
+        transition: all 0.3s ease;
+    }
+
+    .services-category:hover .category-icon {
+        background-color: rgba(212, 175, 55, 0.1);
+    }
+
+    .category-header h3 {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 1.8rem;
+        color: #e0e0e0;
+        font-weight: 400;
+        letter-spacing: 1px;
+        margin: 0;
+    }
+
+    .service-list {
+        padding: 20px 0;
+    }
+
+    .service-item {
+        display: flex;
+        justify-content: space-between;
+        padding: 15px 25px;
+        border-bottom: 1px solid #1a1a1a;
+        transition: all 0.3s ease;
+    }
+
+    .service-item:last-child {
+        border-bottom: none;
+    }
+
+    .service-item:hover {
+        background-color: rgba(212, 175, 55, 0.03);
+    }
+
+    .service-info {
+        flex: 1;
+        padding-right: 15px;
+    }
+
+    .service-info h4 {
+        font-size: 1rem;
+        color: #d4af37;
+        margin: 0 0 8px;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+    }
+
+    .service-info p {
+        font-size: 0.85rem;
+        color: #999;
+        margin: 0;
+        line-height: 1.6;
+    }
+
+    .service-price {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 1.2rem;
+        color: #e0e0e0;
+        font-weight: 400;
+        display: flex;
+        align-items: center;
+        white-space: nowrap;
+    }
+
+    .services-note {
+        text-align: center;
+        margin-top: 50px;
+        padding: 30px;
+        border-top: 1px solid #222;
+    }
+
+    .services-note p {
+        color: #999;
+        font-size: 0.9rem;
+        font-style: italic;
+        margin-bottom: 30px;
+    }
+
+    .services-cta {
+        margin-top: 10px;
+    }
+
+    @media screen and (max-width: 768px) {
+        .services-wrapper {
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+    }
+</style>
+
+
+
+
+<!-- Секция "Галерея работ" -->
+<section id="gallery" class="container">
+    <div class="section-title">
+        <h2>Галерея работ</h2>
+        <p>Лучшие примеры моих работ и достижений в создании уникальных образов</p>
+    </div>
+
+    <div class="gallery-filter">
+        <button class="filter-btn active" data-filter="all">Все работы</button>
+        <button class="filter-btn" data-filter="haircuts">Стрижки</button>
+    </div>
+
+    <div class="gallery-grid">
+        <!-- Стрижки -->
+        <div class="gallery-item haircuts">
+            <div class="gallery-image">
+                <img src="/api/placeholder/600/800" alt="Женская стрижка боб">
+                <div class="gallery-overlay">
+                    <div class="gallery-info">
+                        <h3>Удлиненный боб</h3>
+                        <p>Современная интерпретация классического боба с легкой асимметрией</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="gallery-item haircuts">
+            <div class="gallery-image">
+                <img src="/api/placeholder/600/800" alt="Мужская стрижка">
+                <div class="gallery-overlay">
+                    <div class="gallery-info">
+                        <h3>Фейд с текстурой</h3>
+                        <p>Плавный переход с сохранением объема в верхней части</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Дополнительные работы (не стрижки) -->
+        <div class="gallery-item">
+            <div class="gallery-image">
+                <img src="/api/placeholder/600/800" alt="Блонд окрашивание">
+                <div class="gallery-overlay">
+                    <div class="gallery-info">
+                        <h3>Холодный блонд</h3>
+                        <p>Техника шатуш с холодным тонированием</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="gallery-item">
+            <div class="gallery-image">
+                <img src="/api/placeholder/600/800" alt="Балаяж окрашивание">
+                <div class="gallery-overlay">
+                    <div class="gallery-info">
+                        <h3>Карамельный балаяж</h3>
+                        <p>Плавный переход от натурального к теплым оттенкам</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <div class="gallery-image">
+                <img src="/api/placeholder/600/800" alt="Свадебная прическа">
+                <div class="gallery-overlay">
+                    <div class="gallery-info">
+                        <h3>Свадебный образ</h3>
+                        <p>Элегантный низкий пучок с живыми цветами</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="gallery-item">
+            <div class="gallery-image">
+                <img src="/api/placeholder/600/800" alt="Вечерняя укладка">
+                <div class="gallery-overlay">
+                    <div class="gallery-info">
+                        <h3>Голливудские локоны</h3>
+                        <p>Классическая укладка для особых мероприятий</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Дополнительные стрижки -->
+        <div class="gallery-item haircuts">
+            <div class="gallery-image">
+                <img src="/api/placeholder/600/800" alt="Пикси стрижка">
+                <div class="gallery-overlay">
+                    <div class="gallery-info">
+                        <h3>Текстурный пикси</h3>
+                        <p>Смелая короткая стрижка с подчеркнутой текстурой</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="gallery-item">
+            <div class="gallery-image">
+                <img src="/api/placeholder/600/800" alt="Кремовое окрашивание">
+                <div class="gallery-overlay">
+                    <div class="gallery-info">
+                        <h3>Кремовый блонд</h3>
+                        <p>Техника airtouch с золотистым тонированием</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="gallery-cta">
+        <p>Хотите увидеть больше моих работ?</p>
+        <a href="https://instagram.com" target="_blank" class="social-link"><i class="fab fa-instagram"></i> Посетите мой Instagram</a>
+    </div>
+</section>
+
+<!-- CSS стили для секции "Галерея работ" -->
+<style>
+    .gallery-filter {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        margin-bottom: 40px;
+    }
+
+    .filter-btn {
+        background: transparent;
+        border: 1px solid #333;
+        color: #b0b0b0;
+        padding: 12px 30px;
+        font-size: 0.9rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    }
+
+    .filter-btn:hover, .filter-btn.active {
+        background-color: rgba(212, 175, 55, 0.1);
+        border-color: #d4af37;
+        color: #d4af37;
+    }
+
+    .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 30px;
+        margin-bottom: 60px;
+    }
+
+    .gallery-item {
+        overflow: hidden;
+    }
+
+    .gallery-image {
+        position: relative;
+        overflow: hidden;
+        aspect-ratio: 3/4;
+        background: #0f0f0f;
+    }
+
+    .gallery-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s ease, filter 0.6s ease;
+    }
+
+    .gallery-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        display: flex;
+        align-items: flex-end;
+        opacity: 0;
+        transition: all 0.4s ease;
+    }
+
+    .gallery-info {
+        padding: 25px;
+        transform: translateY(20px);
+        transition: all 0.4s ease;
+        width: 100%;
+    }
+
+    .gallery-info h3 {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 1.5rem;
+        color: #d4af37;
+        margin: 0 0 10px;
+        font-weight: 400;
+    }
+
+    .gallery-info p {
+        font-size: 0.85rem;
+        color: #e0e0e0;
+        margin: 0;
+        line-height: 1.6;
+    }
+
+    .gallery-image:hover img {
+        transform: scale(1.05);
+        filter: brightness(0.7);
+    }
+
+    .gallery-image:hover .gallery-overlay {
+        opacity: 1;
+    }
+
+    .gallery-image:hover .gallery-info {
+        transform: translateY(0);
+    }
+
+    .gallery-cta {
+        text-align: center;
+        margin-top: 40px;
+        padding: 40px 20px;
+        border-top: 1px solid #222;
+    }
+
+    .gallery-cta p {
+        color: #999;
+        margin-bottom: 20px;
+        font-size: 1.1rem;
+    }
+
+    .social-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        color: #d4af37;
+        text-decoration: none;
+        font-size: 1rem;
+        padding: 12px 25px;
+        border: 1px solid #d4af37;
+        transition: all 0.3s ease;
+    }
+
+    .social-link:hover {
+        background-color: rgba(212, 175, 55, 0.1);
+        transform: translateY(-3px);
+    }
+
+    @media screen and (max-width: 768px) {
+        .gallery-grid {
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-filter {
+            gap: 15px;
+        }
+
+        .filter-btn {
+            padding: 10px 25px;
+            font-size: 0.85rem;
+        }
+    }
+</style>
+
+<!-- JavaScript для фильтрации галереи -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+
+        // Обработчик нажатия на кнопки фильтра
+        filterButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Удаляем активный класс со всех кнопок
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                // Добавляем активный класс нажатой кнопке
+                this.classList.add('active');
+
+                // Получаем значение фильтра
+                const filterValue = this.getAttribute('data-filter');
+
+                // Показываем или скрываем элементы галереи
+                galleryItems.forEach(item => {
+                    if (filterValue === 'all' || item.classList.contains(filterValue)) {
+                        item.style.display = 'block';
+                        setTimeout(() => {
+                            item.style.opacity = '1';
+                            item.style.transform = 'scale(1)';
+                        }, 50);
+                    } else {
+                        item.style.opacity = '0';
+                        item.style.transform = 'scale(0.95)';
+                        setTimeout(() => {
+                            item.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            });
+        });
+    });
+</script>
+
+
+
+
+
+
+
+<!-- Секция "Отзывы клиентов" -->
+<section id="testimonials" class="container">
+    <div class="section-title">
+        <h2>Отзывы клиентов</h2>
+        <p>Узнайте, что говорят мои клиенты о результатах нашей совместной работы</p>
+    </div>
+
+    <div class="testimonials-container">
+        <div class="testimonials-slider">
+            <!-- Слайд 1 -->
+            <div class="testimonial-slide">
+                <div class="testimonial-content">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="testimonial-text">
+                        <p>"Анна полностью преобразила мой образ! Я никогда не решалась на короткую стрижку, но она убедила меня попробовать что-то новое. Результат превзошел все ожидания – теперь чувствую себя увереннее и выгляжу современнее. Однозначно вернусь снова!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <h4>Екатерина М.</h4>
+                        <span>Стрижка и окрашивание</span>
+                    </div>
+                </div>
+                <div class="testimonial-image">
+                    <div class="before-after">
+                        <div class="image-before">
+                            <img src="/api/placeholder/400/500" alt="До преображения">
+                            <span>До</span>
+                        </div>
+                        <div class="image-after">
+                            <img src="/api/placeholder/400/500" alt="После преображения">
+                            <span>После</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Слайд 2 -->
+            <div class="testimonial-slide">
+                <div class="testimonial-content">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="testimonial-text">
+                        <p>"Я искала мастера, который сможет воплотить мою мечту о платиновом блонде без повреждения волос. Анна – настоящий профессионал в колористике! Она подобрала идеальный оттенок для моего цветотипа, а волосы остались здоровыми и блестящими. Очень рекомендую!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <h4>Мария Д.</h4>
+                        <span>Сложное окрашивание</span>
+                    </div>
+                </div>
+                <div class="testimonial-image">
+                    <div class="before-after">
+                        <div class="image-before">
+                            <img src="/api/placeholder/400/500" alt="До преображения">
+                            <span>До</span>
+                        </div>
+                        <div class="image-after">
+                            <img src="/api/placeholder/400/500" alt="После преображения">
+                            <span>После</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Слайд 3 -->
+            <div class="testimonial-slide">
+                <div class="testimonial-content">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="testimonial-text">
+                        <p>"Для своей свадьбы я хотела особенную прическу – элегантную, но при этом комфортную на весь день. Анна создала потрясающий образ, который идеально дополнил мое платье и продержался безупречно с утра до позднего вечера. Она внимательно выслушала все мои пожелания и превратила их в нечто большее!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <h4>Алина С.</h4>
+                        <span>Свадебная прическа</span>
+                    </div>
+                </div>
+                <div class="testimonial-image">
+                    <div class="before-after">
+                        <div class="image-before">
+                            <img src="/api/placeholder/400/500" alt="До преображения">
+                            <span>До</span>
+                        </div>
+                        <div class="image-after">
+                            <img src="/api/placeholder/400/500" alt="После преображения">
+                            <span>После</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Навигация слайдера -->
+        <div class="testimonials-navigation">
+            <button class="prev-btn" aria-label="Предыдущий отзыв">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <div class="testimonials-dots">
+                <span class="dot active" data-slide="0"></span>
+                <span class="dot" data-slide="1"></span>
+                <span class="dot" data-slide="2"></span>
+            </div>
+            <button class="next-btn" aria-label="Следующий отзыв">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- Секция "Философия и подход" -->
+<section id="philosophy" class="container">
+    <div class="section-title">
+        <h2>Философия и подход</h2>
+        <p>Мои принципы работы и ценности, которыми я руководствуюсь в создании образов</p>
+    </div>
+
+    <div class="philosophy-intro">
+        <p>Моя главная цель — не просто создать красивую прическу, а помочь вам найти и выразить вашу индивидуальность через образ. Я верю, что правильно подобранная стрижка и цвет волос могут полностью преобразить человека, придать уверенность и подчеркнуть естественную красоту.</p>
+    </div>
+
+    <div class="philosophy-values">
+        <div class="value-item">
+            <div class="value-icon">
+                <i class="fas fa-user-check"></i>
+            </div>
+            <h3>Индивидуальный подход</h3>
+            <p>Каждый клиент уникален. Я внимательно изучаю черты лица, структуру волос и стиль жизни, чтобы создать идеально подходящий образ. Никаких шаблонных решений — только персонализированный подход.</p>
+        </div>
+
+        <div class="value-item">
+            <div class="value-icon">
+                <i class="fas fa-leaf"></i>
+            </div>
+            <h3>Экологичность</h3>
+            <p>Я выбираю косметику и материалы от брендов, которые заботятся о природе и не тестируют продукцию на животных. Мои клиенты могут быть уверены, что их красота не наносит вред окружающей среде.</p>
+        </div>
+
+        <div class="value-item">
+            <div class="value-icon">
+                <i class="fas fa-lightbulb"></i>
+            </div>
+            <h3>Инновации</h3>
+            <p>Парикмахерское искусство постоянно развивается. Я регулярно обучаюсь новым техникам, слежу за тенденциями и внедряю инновационные методы, чтобы предложить вам самые современные решения.</p>
+        </div>
+
+        <div class="value-item">
+            <div class="value-icon">
+                <i class="fas fa-award"></i>
+            </div>
+            <h3>Перфекционизм</h3>
+            <p>Я уделяю внимание каждой детали и не останавливаюсь, пока результат не будет идеальным. Ваше удовлетворение — мой главный приоритет, и я готова приложить все усилия для достижения безупречного образа.</p>
+        </div>
+    </div>
+
+    <div class="philosophy-quote">
+        <blockquote>
+            <p>"Я не просто создаю прически — я помогаю людям раскрыть их естественную красоту и обрести гармонию с собой."</p>
+        </blockquote>
+    </div>
+</section>
+
+<!-- CSS стили для секций -->
+<style>
+    /* Стили для секции "Отзывы клиентов" */
+    .testimonials-container {
+        position: relative;
+        margin: 0 auto;
+        max-width: 1000px;
+        overflow: hidden;
+    }
+
+    .testimonials-slider {
+        display: flex;
+        transition: transform 0.5s ease;
+    }
+
+    .testimonial-slide {
+        min-width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 30px;
+        padding: 30px 0;
+    }
+
+    .testimonial-content {
+        flex: 1;
+        min-width: 300px;
+        background-color: #101010;
+        padding: 40px;
+        border: 1px solid #222;
+        position: relative;
+    }
+
+    .testimonial-content:before {
+        content: '"';
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 80px;
+        color: rgba(212, 175, 55, 0.1);
+        line-height: 1;
+    }
+
+    .testimonial-rating {
+        margin-bottom: 20px;
+        color: #d4af37;
+    }
+
+    .testimonial-text p {
+        font-size: 1rem;
+        line-height: 1.8;
+        color: #e0e0e0;
+        font-style: italic;
+        margin-bottom: 25px;
+    }
+
+    .testimonial-author h4 {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 1.3rem;
+        color: #d4af37;
+        margin: 0 0 5px;
+        font-weight: 400;
+    }
+
+    .testimonial-author span {
+        font-size: 0.85rem;
+        color: #999;
+        letter-spacing: 1px;
+    }
+
+    .testimonial-image {
+        flex: 1;
+        min-width: 300px;
+    }
+
+    .before-after {
+        display: flex;
+        gap: 20px;
+    }
+
+    .image-before, .image-after {
+        flex: 1;
+        position: relative;
+    }
+
+    .image-before img, .image-after img {
+        width: 100%;
+        height: auto;
+        border: 5px solid #101010;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        transition: all 0.3s ease;
+    }
+
+    .image-before:hover img, .image-after:hover img {
+        transform: scale(1.03);
+    }
+
+    .image-before span, .image-after span {
+        position: absolute;
+        bottom: 15px;
+        left: 15px;
+        background-color: rgba(0, 0, 0, 0.7);
+        color: #d4af37;
+        font-size: 0.8rem;
+        padding: 5px 15px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    }
+
+    .testimonials-navigation {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 40px;
+        gap: 30px;
+    }
+
+    .prev-btn, .next-btn {
+        background: transparent;
+        border: 1px solid #333;
+        color: #d4af37;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .prev-btn:hover, .next-btn:hover {
+        background-color: rgba(212, 175, 55, 0.1);
+        border-color: #d4af37;
+    }
+
+    .testimonials-dots {
+        display: flex;
+        gap: 8px;
+    }
+
+    .dot {
+        width: 30px;
+        height: 2px;
+        background-color: #333;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .dot.active, .dot:hover {
+        background-color: #d4af37;
+    }
+
+    /* Стили для секции "Философия и подход" */
+    .philosophy-intro {
+        max-width: 800px;
+        margin: 0 auto 60px;
+        text-align: center;
+    }
+
+    .philosophy-intro p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: #b0b0b0;
+    }
+
+    .philosophy-values {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 40px;
+        margin-bottom: 60px;
+    }
+
+    .value-item {
+        background-color: #101010;
+        padding: 40px 30px;
+        border: 1px solid #222;
+        text-align: center;
+        transition: all 0.3s ease;
+    }
+
+    .value-item:hover {
+        transform: translateY(-5px);
+        border-color: #333;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .value-icon {
+        width: 60px;
+        height: 60px;
+        margin: 0 auto 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #d4af37;
+        color: #d4af37;
+        font-size: 1.5rem;
+        transition: all 0.3s ease;
+    }
+
+    .value-item:hover .value-icon {
+        background-color: rgba(212, 175, 55, 0.1);
+    }
+
+    .value-item h3 {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 1.5rem;
+        color: #e0e0e0;
+        margin-bottom: 20px;
+        font-weight: 400;
+    }
+
+    .value-item p {
+        font-size: 0.9rem;
+        line-height: 1.8;
+        color: #b0b0b0;
+    }
+
+    .philosophy-quote {
+        max-width: 800px;
+        margin: 60px auto 0;
+        text-align: center;
+        padding: 40px 0;
+        border-top: 1px solid #222;
+    }
+
+    .philosophy-quote blockquote {
+        position: relative;
+        padding: 0 60px;
+    }
+
+    .philosophy-quote blockquote:before,
+    .philosophy-quote blockquote:after {
+        content: '"';
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 60px;
+        color: #d4af37;
+        position: absolute;
+        top: -20px;
+        left: 0;
+        line-height: 1;
+    }
+
+    .philosophy-quote blockquote:after {
+        content: '"';
+        left: auto;
+        right: 0;
+    }
+
+    .philosophy-quote p {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 1.5rem;
+        color: #e0e0e0;
+        line-height: 1.6;
+        font-style: italic;
+    }
+
+    @media screen and (max-width: 768px) {
+        .testimonial-slide {
+            flex-direction: column;
+        }
+
+        .philosophy-quote blockquote {
+            padding: 0 40px;
+        }
+
+        .philosophy-quote p {
+            font-size: 1.3rem;
+        }
+    }
+</style>
+
+<!-- JavaScript для слайдера отзывов -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const slider = document.querySelector('.testimonials-slider');
+        const slides = document.querySelectorAll('.testimonial-slide');
+        const dots = document.querySelectorAll('.dot');
+        const prevBtn = document.querySelector('.prev-btn');
+        const nextBtn = document.querySelector('.next-btn');
+
+        let currentSlide = 0;
+        const slideCount = slides.length;
+
+        // Функция для перехода к определенному слайду
+        function goToSlide(index) {
+            if (index < 0) {
+                index = slideCount - 1;
+            } else if (index >= slideCount) {
+                index = 0;
+            }
+
+            currentSlide = index;
+            slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+
+            // Обновление активной точки
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === currentSlide);
+            });
+        }
+
+        // Кнопки "Предыдущий" и "Следующий"
+        prevBtn.addEventListener('click', () => {
+            goToSlide(currentSlide - 1);
+        });
+
+        nextBtn.addEventListener('click', () => {
+            goToSlide(currentSlide + 1);
+        });
+
+        // Клик по точкам
+        dots.forEach((dot, i) => {
+            dot.addEventListener('click', () => {
+                goToSlide(i);
+            });
+        });
+
+        // Автоматическая смена слайдов каждые 6 секунд
+        let slideInterval = setInterval(() => {
+            goToSlide(currentSlide + 1);
+        }, 6000);
+
+        // Остановка автоматической смены при наведении на слайдер
+        const testimonialContainer = document.querySelector('.testimonials-container');
+
+        testimonialContainer.addEventListener('mouseenter', () => {
+            clearInterval(slideInterval);
+        });
+
+        testimonialContainer.addEventListener('mouseleave', () => {
+            slideInterval = setInterval(() => {
+                goToSlide(currentSlide + 1);
+            }, 6000);
+        });
+    });
+</script>
+
+
+
+
+<footer id="contact">
+    <div class="footer-content">
+        <div class="footer-section">
+            <h3>СТИЛЬОБРАЗ</h3>
+            <p>Искусство создания стиля, которое подчеркнет вашу индивидуальность и красоту.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                <a href="#"><i class="fab fa-tiktok"></i></a>
+            </div>
+        </div>
+
+        <div class="footer-section">
+            <h3>Услуги</h3>
+            <ul>
+                <li>Стрижки женские и мужские</li>
+                <li>Окрашивание любой сложности</li>
+                <li>Укладки и прически</li>
+                <li>Наращивание волос</li>
+                <li>Уходовые процедуры</li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h3>Контакты</h3>
+            <div class="contact-info">
+                <p><i class="fas fa-map-marker-alt"></i> ул. Парикмахерская, 10</p>
+                <p><i class="fas fa-phone"></i> +7 (999) 123-45-67</p>
+                <p><i class="fas fa-envelope"></i> info@stilobraz.ru</p>
+                <p><i class="fas fa-clock"></i> Пн-Сб: 10:00 - 20:00</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2025 СТИЛЬОБРАЗ. Все права защищены.</p>
+    </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+<script>
+    // Particles.js Config
+    particlesJS("particles-js", {
+        "particles": {
+            "number": {
+                "value": 50,
+                "density": {
+                    "enable": true,
+                    "value_area": 800
+                }
+            },
+            "color": {
+                "value": "#d4af37"
+            },
+            "shape": {
+                "type": "circle",
+                "stroke": {
+                    "width": 0,
+                    "color": "#000000"
+                },
+                "polygon": {
+                    "nb_sides": 5
+                }
+            },
+            "opacity": {
+                "value": 0.3,
+                "random": true,
+                "anim": {
+                    "enable": true,
+                    "speed": 0.5,
+                    "opacity_min": 0.1,
+                    "sync": false
+                }
+            },
+            "size": {
+                "value": 2,
+                "random": true,
+                "anim": {
+                    "enable": true,
+                    "speed": 2,
+                    "size_min": 0.1,
+                    "sync": false
+                }
+            },
+            "line_linked": {
+                "enable": true,
+                "distance": 150,
+                "color": "#d4af37",
+                "opacity": 0.2,
+                "width": 1
+            },
+            "move": {
+                "enable": true,
+                "speed": 1,
+                "direction": "none",
+                "random": true,
+                "straight": false,
+                "out_mode": "out",
+                "bounce": false,
+                "attract": {
+                    "enable": false,
+                    "rotateX": 600,
+                    "rotateY": 1200
+                }
+            }
+        },
+        "interactivity": {
+            "detect_on": "canvas",
+            "events": {
+                "onhover": {
+                    "enable": true,
+                    "mode": "grab"
+                },
+                "onclick": {
+                    "enable": true,
+                    "mode": "push"
+                },
+                "resize": true
+            },
+            "modes": {
+                "grab": {
+                    "distance": 140,
+                    "line_linked": {
+                        "opacity": 0.5
+                    }
+                },
+                "bubble": {
+                    "distance": 400,
+                    "size": 40,
+                    "duration": 2,
+                    "opacity": 8,
+                    "speed": 3
+                },
+                "repulse": {
+                    "distance": 200,
+                    "duration": 0.4
+                },
+                "push": {
+                    "particles_nb": 4
+                },
+                "remove": {
+                    "particles_nb": 2
+                }
+            }
+        },
+        "retina_detect": true
+    });
+
+    // Sticky Navigation
+    window.addEventListener('scroll', function() {
+        const nav = document.querySelector('.nav-container');
+        if (window.scrollY > 100) {
+            nav.classList.add('scrolled');
+        } else {
+            nav.classList.remove('scrolled');
+        }
+    });
+
+    // Mobile Menu Toggle
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const navLinks = document.querySelector('.nav-links');
+
+    mobileMenuBtn.addEventListener('click', function() {
+        navLinks.classList.toggle('active');
+    });
+
+    // Smooth Scrolling for Anchors
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+
+            navLinks.classList.remove('active');
+
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+
+            window.scrollTo({
+                top: targetElement.offsetTop - 80,
+                behavior: 'smooth'
+            });
+        });
+    });
+
+    // Animate skill bars when in viewport
+    const skillSections = document.querySelectorAll('.skills');
+
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.2
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const skillBars = entry.target.querySelectorAll('.skill-progress');
+                skillBars.forEach((bar, index) => {
+                    const width = bar.style.width;
+                    bar.style.width = '0';
+                    setTimeout(() => {
+                        bar.style.width = width;
+                        bar.style.transition = 'width 1s ease';
+                    }, index * 200);
+                });
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    skillSections.forEach(section => {
+        observer.observe(section);
+    });
+</script>
 </body>
 </html>
